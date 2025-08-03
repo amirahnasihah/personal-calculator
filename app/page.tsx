@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { SalaryInput } from '@/components/SalaryInput';
-import { ExpenseManager } from '@/components/ExpenseManager';
-import { IncomeManager } from '@/components/IncomeManager';
-import { NetIncomeSummary } from '@/components/NetIncomeSummary';
-import { useCalculatorStore } from '@/store/calculatorStore';
+import react from "react";
+import { useEffect } from "react";
+import { SalaryInput } from "@/components/SalaryInput";
+import { ExpenseManager } from "@/components/ExpenseManager";
+import { IncomeManager } from "@/components/IncomeManager";
+import { NetIncomeSummary } from "@/components/NetIncomeSummary";
+import { useCalculatorStore } from "@/store/calculatorStore";
 
 export default function Home() {
   const store = useCalculatorStore();
 
   useEffect(() => {
-    // Rehydrate the store from localStorage on client side
-    store.persist?.rehydrate();
-  }, [store.persist]);
+    useCalculatorStore.persist.rehydrate();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -25,7 +25,8 @@ export default function Home() {
               Personal Finance Calculator
             </h1>
             <p className="text-lg text-gray-600">
-              Track your salary, expenses, and additional income to understand your financial health
+              Track your salary, expenses, and additional income to understand
+              your financial health
             </p>
           </div>
 
@@ -46,7 +47,8 @@ export default function Home() {
           {/* Footer */}
           <div className="text-center mt-12 py-6 border-t border-gray-200">
             <p className="text-sm text-gray-500">
-              All data is stored locally in your browser. Your financial information is private and secure.
+              All data is stored locally in your browser. Your financial
+              information is private and secure.
             </p>
           </div>
         </div>
