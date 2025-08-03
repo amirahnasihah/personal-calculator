@@ -76,9 +76,7 @@ export const useCalculatorStore = create<CalculatorState>()(
     }),
     {
       name: "salary-calculator-storage",
-       onRehydrateStorage: () => (state) => {
-        state?.setHasHydrated(true);
-      },
+      skipHydration: true,
     }
   )
 );
